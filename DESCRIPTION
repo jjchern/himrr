@@ -1,0 +1,13 @@
+Package: himrr
+Title: ACA Health Insurance Market Rating Reforms
+Version: 0.0.0.9000
+Authors@R: 'JJ Chen <jiajia.chern@gmail.com> [aut, cre]'
+Description: An R data package for ACA's state specific rating variations.
+Depends:
+    R (>= 3.2.0)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/jjchern/himrr
+BugReports: https://github.com/jjchern/himrr/issues
+RoxygenNote: 5.0.1
