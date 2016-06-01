@@ -25,9 +25,8 @@ Specifically, [45 CFR 147.102 - Fair health insurance premiums](https://www.law.
 4. Two tiers: one tier for all adults and a second tier for all children under 21, and
 5. Per member rating. 
 
-States can request a standard lower than the federal standard.
-
-`himrr` includes three datasets for federal defualt, state-specific rating variations in individual market, and state-specific rating variations in small group market.
+States can request a standard lower than the federal standard. 
+For example, DC, MA, NY, and UT have their own age curve for both individual and small group markets, and NJ has specific age curve for small group market. 
 
 ## Source
 
@@ -40,3 +39,42 @@ States can request a standard lower than the federal standard.
 devtools::install_github("jjchern/himrr")
 ```
 
+# Usage
+
+## `himrr`'s Three Tibbles
+
+`himrr` includes three datasets:
+
+- `himrr::default` for federal default, 
+- `himrr::im` for state-specific rating variations in individual market, and 
+- `himrr::sgm` for state-specific rating variations in small group market.
+
+```{r}
+library(dplyr, warn.conflicts = FALSE)
+himrr::default
+himrr::im
+himrr::sgm
+```
+
+## State Specific Age Curves for Individual Market
+
+```{r}
+himrr::im %>% 
+        select(state, age_curve) %>% 
+        tidyr::unnest() 
+```
+
+## State Specific Family Tiers For Individual Market
+
+```{r}
+himrr::im %>% 
+        select(state, family_tiers) %>% 
+        mutate(state = if_else(family_tiers == "Uniform", "Other States", state)) %>% 
+        distinct() %>% 
+        knitr::kable()
+```
+
+# Reference
+
+- [KFF - Health Insurance & Managed Care](http://kff.org/state-category/health-insurance-managed-care/)
+- [The Affordable Care Act: Rating Factor Limitations](http://coventryhealthcare.com/web/groups/public/@cvty_corporate_chc/documents/webcontent/c084481.pdf)
