@@ -3,6 +3,8 @@
 About
 =====
 
+[![Travis-CI Build Status](https://travis-ci.org/jjchern/himrr.svg?branch=master)](https://travis-ci.org/jjchern/himrr)
+
 `himrr` is an R data package for policy parameters specified by ACA's **H**ealth **I**nsurance **M**arket **R**ating **R**eform.
 
 Premiums in Health Insurance Marketplace are regulated under the Affordable Care Act (ACA). Specifically, [45 CFR 147.102 - Fair health insurance premiums](https://www.law.cornell.edu/cfr/text/45/147.102) provides a federal default of
