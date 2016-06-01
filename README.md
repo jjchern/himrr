@@ -115,7 +115,7 @@ himrr::im %>%
 #> ..     ...   ...       ...
 ```
 
-State Specific Family Tiers For Individual Market
+State Specific Family Tiers for Individual Market
 -------------------------------------------------
 
 ``` r
